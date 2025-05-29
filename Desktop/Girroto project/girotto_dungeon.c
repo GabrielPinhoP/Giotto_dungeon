@@ -152,7 +152,7 @@ void handle_movement(char map[MAX_HEIGHT][MAX_WIDTH], char input, int width, int
         
         else{
         system("clear");
-        printf("\nvocê usou a chave e entrou na próxima fase!\n");
+        printf("\nvocê usou a chave e entrou no proximo level!\n");
         sleep_ms(1500);
         game->has_key = 0;
         game->level++;
@@ -307,7 +307,7 @@ void load_level(char map[MAX_HEIGHT][MAX_WIDTH], int *width, int *height, GameSt
             "*   *      ******  *",
             "*          *      &*",
             "*   ****************",
-            "*         @*********",
+            "*               @***",
             "********************"
         };
         
@@ -329,12 +329,12 @@ void load_level(char map[MAX_HEIGHT][MAX_WIDTH], int *width, int *height, GameSt
             "*   *****      *   *",
             "*   *          * @ *",
             "*****  #*****  *****",
-            "*            *    >*",
+            "*            *     *",
             "*   *****    *******",
             "*   *##O*          *",
             "*   *   *    ###   *",
             "*       *    ###   *",
-            "*   *   *          *",
+            "*   *   *         >*",
             "*   *   ************",
             "*   *              *",
             "D   *   *          *",
@@ -397,8 +397,8 @@ void load_level(char map[MAX_HEIGHT][MAX_WIDTH], int *width, int *height, GameSt
             "*       *   *             *   *       *",
             "*   *       *             *   *   *   *",
             "***********************************   *",
-            "*                                     *",
-            "*                    V              & *",
+            "*                       &             *",
+            "*                    V                *",
             "***************************************"
         };
         
@@ -447,6 +447,7 @@ void game_loop(GameState *game) {
     }
 }
 
+// compensar funcao getch da CONIO.h
 /* Initialize new terminal i/o settings */
 static struct termios old, current;
 
